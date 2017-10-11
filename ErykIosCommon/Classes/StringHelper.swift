@@ -10,7 +10,7 @@ import Foundation
 
 public class StringHelper {
     
-    public func randomString(length: Int) -> String {
+    public static func randomString(length: Int) -> String {
         
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = UInt32(letters.length)
