@@ -1,0 +1,16 @@
+PODS:
+  - ErykIosCommon (0.1.0)
+
+DEPENDENCIES:
+  - ErykIosCommon (from `../`)
+
+EXTERNAL SOURCES:
+  ErykIosCommon:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ErykIosCommon: 5abf096b4a6baadf98055a29e89e9222ea38be55
+
+PODFILE CHECKSUM: 0fb6327dd4ceb26b4bd0b1b6a39d5fa85f169e03
+
+COCOAPODS: 1.2.1

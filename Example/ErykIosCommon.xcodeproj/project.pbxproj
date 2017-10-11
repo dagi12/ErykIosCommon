@@ -12,14 +12,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		068FD1C64E429CB3D2668388 /* ErykIosCommon.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ErykIosCommon.podspec; path = ../ErykIosCommon.podspec; sourceTree = "<group>"; };
+		068FD1C64E429CB3D2668388 /* ErykIosCommon.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ErykIosCommon.podspec; path = ../ErykIosCommon.podspec; sourceTree = "<group>"; };
 		12F46B13BE79340FAAA2CE23 /* Pods-ErykIosCommon_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErykIosCommon_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ErykIosCommon_Tests/Pods-ErykIosCommon_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		237C0F403B4D53D761F39BA1 /* Pods-ErykIosCommon_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ErykIosCommon_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ErykIosCommon_Tests/Pods-ErykIosCommon_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		507BB4097B3BE6F25020A16B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		507BB4097B3BE6F25020A16B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* ErykIosCommon_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErykIosCommon_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		659242E8FE0FA6D78B991175 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		659242E8FE0FA6D78B991175 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		CA5B2DAC9C965DFD72ABAFC0 /* Pods_ErykIosCommon_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ErykIosCommon_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,12 +131,9 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 28J8R24SUR;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -333,6 +330,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 12F46B13BE79340FAAA2CE23 /* Pods-ErykIosCommon_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 28J8R24SUR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -354,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 237C0F403B4D53D761F39BA1 /* Pods-ErykIosCommon_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 28J8R24SUR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
