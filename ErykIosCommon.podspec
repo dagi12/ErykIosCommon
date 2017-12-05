@@ -29,5 +29,9 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'ErykIosCommon/Classes/**/*'
-
+  s.dependency 'Alamofire', '~> 4.5.1'
+  s.dependency 'Moya/RxSwift', '~> 10.0.0'
+  s.dependency 'RxSwift', '~> 4.0.0'
+  s.dependency 'SkyFloatingLabelTextField', '~> 3.2.1'
+  s.dependency 'Kingfisher', '~> 4.1.0'
 end

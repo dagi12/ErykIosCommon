@@ -1,0 +1,37 @@
+/* 
+  Common.strings
+  erent-ceo-ios
+
+  Created by Eryk Mariankowski on 15.11.2017.
+  Copyright © 2017 Eryk Mariankowski. All rights reserved.
+*/
+"error" = "Błąd";
+"notification" = "Powiadomienie";
+"enable" = "Włącz";
+"disable" = "Wyłącz";
+"cancel" = "Anuluj";
+"retry" = "Ponów";
+"off" = "WYŁ.";
+"continue_txt" = "Kontynuuj";
+"please_wait" = "Prosimy poczekać…";
+"authorization" = "Uwierzytelnianie…";
+"delete" = "Usuń";
+"choose_option" = "Wybierz opcję";
+"invalid_email" = "Nieprawidłowy email";
+"empty_password" = "Puste hasło";
+"short_password" = "Hasło jest za krótkie";
+"no_internet" = "Brak dostępu do internetu";
+"date" = "Data";
+
+"jan" = "Sty";
+"feb" = "Lut";
+"mar" = "Mar";
+"apr" = "Kwi";
+"may" = "Maj";
+"jun" = "Cze";
+"jul" = "Lip";
+"aug" = "Sie";
+"sep" = "Wrz";
+"oct" = "Paź";
+"nov" = "Lis";
+"dec" = "Gru";

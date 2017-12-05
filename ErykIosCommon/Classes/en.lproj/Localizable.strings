@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  erent-ceo-ios
+
+  Created by Eryk Mariankowski on 05.10.2017.
+  Copyright © 2017 Eryk Mariankowski. All rights reserved.
+*/
+"installation_bluetooth" = "Bluetooth";
+"error" = "Error";
+"notification" = "Notification";
+"enable" = "Enable";
+"disable" = "Disable";
+"cancel" = "Cancel";
+"retry" = "Retry";
+"off" = "Off";
+"continue_txt" = "Continue";
+"please_wait" = "Please wait a moment…";
+"authorization" = "Authorization";
+"delete" = "Delete";
+"widget" = "Widget";
+"choose_option" = "Choose option";
+"invalid_email" = "Invalid email";
+"empty_password" = "Empty password";
+"short_password" = "Password too short";
+"no_internet" = "No internet connection";
+"ok" = "Ok";
+"date" = "Date";
+
+"jan" = "Jan";
+"feb" = "Feb";
+"mar" = "Mar";
+"apr" = "Apr";
+"may" = "May";
+"jun" = "Jun";
+"jul" = "Jul";
+"aug" = "Aug";
+"sep" = "Sep";
+"oct" = "Oct";
+"nov" = "Nov";
+"dec" = "Dec";
+
+"auth_api_connection_test" = "AuthApi connection test";
+"api_connection_test" = "Api connection test";
+"database_backup" = "Database copy";
+"empty_alias" = "Empty alias";
+"rental_status" = "Rental status";
+"rental_status" = "Stan najmu";
+"status_free" = "Free cars";
+"status_rented" = "Rented cars";
+"transfer" = "Serviced or transferred";
+"all_cars" = "All cars";
+"cars" = "Cars";
