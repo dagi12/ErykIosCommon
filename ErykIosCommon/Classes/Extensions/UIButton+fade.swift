@@ -10,11 +10,11 @@ import UIKit
 
 extension UIButton {
 
-    enum ButtonConstants {
-        static let animationDuration = 0.5
+    public enum ButtonConstants {
+        public static let animationDuration = 0.5
     }
 
-    func fadeIn(duration: Double = ButtonConstants.animationDuration) {
+    public func fadeIn(duration: Double = ButtonConstants.animationDuration) {
         guard isHidden else {
             return
         }
@@ -25,7 +25,7 @@ extension UIButton {
         })
     }
 
-    func fadeOut(duration: Double = ButtonConstants.animationDuration) {
+    public func fadeOut(duration: Double = ButtonConstants.animationDuration) {
         guard !isHidden else {
             return
         }

@@ -38,7 +38,7 @@ public class BaseController: UIViewController {
         dismiss(animated: true)
     }
 
-    func showError(message: String) {
+    public func showError(message: String) {
         if  presentedViewController != nil {
             dismiss(animated: true, completion: {
                 self.internalShowError(message: message)
@@ -55,7 +55,7 @@ public class BaseController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-    func showInfo(message: String) {
+    public func showInfo(message: String) {
         if presentedViewController != nil {
             dismiss(animated: true) {
                 self.internalShowInfo(message: message)
@@ -65,7 +65,7 @@ public class BaseController: UIViewController {
         }
     }
 
-    func present(_ controller: UIViewController) {
+    public func present(_ controller: UIViewController) {
         if presentedViewController != nil {
             dismiss(animated: true) {
                 self.present(controller, animated: true)

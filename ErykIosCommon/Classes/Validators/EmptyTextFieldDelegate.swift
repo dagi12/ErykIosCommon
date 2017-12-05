@@ -8,7 +8,7 @@
 
 import SkyFloatingLabelTextField
 
-public class EmptyTextFieldDelegate: NSObject, UITextFieldDelegate {
+open class EmptyTextFieldDelegate: NSObject, UITextFieldDelegate {
 
     private let msg: String!
 

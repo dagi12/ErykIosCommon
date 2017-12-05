@@ -8,7 +8,7 @@
 
 import Moya
 
-public class BaseStore<T: TargetType> {
+open class BaseStore<T: TargetType> {
 
     public lazy var provider: MoyaProvider<T> = MoyaProvider<T>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
