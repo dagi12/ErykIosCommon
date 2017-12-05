@@ -8,11 +8,11 @@
 
 import SkyFloatingLabelTextField
 
-open class EmptyTextFieldDelegate: NSObject, UITextFieldDelegate {
+public class EmptyTextFieldDelegate: NSObject, UITextFieldDelegate {
 
     private let msg: String!
 
-    init(msg: String) {
+    public init(msg: String) {
         self.msg = msg
     }
 
@@ -23,7 +23,7 @@ open class EmptyTextFieldDelegate: NSObject, UITextFieldDelegate {
         return true
     }
 
-    func verify(_ textField: UITextField, _ string: String) {
+    public func verify(_ textField: UITextField, _ string: String) {
         if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
             if string.characters.count == 0 {
                 floatingLabelTextField.errorMessage = msg.common

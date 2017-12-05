@@ -17,7 +17,7 @@ public class EmailTextFieldDelegate: NSObject, UITextFieldDelegate {
         return true
     }
 
-    func verify(_ textField: UITextField) {
+    public func verify(_ textField: UITextField) {
         if let text = textField.text {
             if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
                 if text.characters.count < 3 || !text.contains("@") {

@@ -8,15 +8,15 @@
 
 import Foundation
 
-enum DateHelper {
+public enum DateHelper {
 
-    static func getCurrentMonth() -> Int {
+    public static func getCurrentMonth() -> Int {
         let date = Date()
         let calendar = Calendar.current
         return calendar.component(.month, from: date)
     }
 
-    static func getCurrentDayOfYear() -> Int {
+    public static func getCurrentDayOfYear() -> Int {
         let date = Date()
         let calendar = Calendar.current
         return calendar.ordinality(of: .day, in: .year, for: date)!

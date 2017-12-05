@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BaseController: UIViewController {
+open class BaseController: UIViewController {
 
     struct ProcessIndicatorCoords {
         static let xCoord = 10
