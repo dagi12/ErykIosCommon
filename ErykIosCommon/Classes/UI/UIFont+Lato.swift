@@ -10,7 +10,7 @@ import UIKit
 
 extension UIFont {
     
-    class func loadFont(withName fontName: String) {
+    public class func loadFont(withName fontName: String) {
         let bundleURL: URL? = Bundle(for: self).url(forResource: "ErykIosCommon",
                                                     withExtension: "bundle")
         let bundle = Bundle(url: bundleURL!)
