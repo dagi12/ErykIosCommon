@@ -19,9 +19,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  s.resource_bundles = {
-    'ErykIosCommon' => ['ErykIosCommon/Assets/*']
-  }
+  s.resource_bundle = { 'ErykIosCommon' => 'ErykIosCommon/Assets/*.ttf' }
 
   s.source_files = 'ErykIosCommon/Classes/**/*'
   s.dependency 'Alamofire', '~> 4.5.1'
