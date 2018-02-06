@@ -7,10 +7,20 @@
 //
 
 import Moya
+import Alamofire
 
 open class BaseStore<T: TargetType> {
+    
+    let serverTrustPolicies: [String: ServerTrustPolicy] = [
+        "193.91.26.137": .disableEvaluation
+    ]
+    
+    public lazy var manager = Manager (
+        configuration: URLSessionConfiguration.default,
+        serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+    )
 
-    public lazy var provider: MoyaProvider<T> = MoyaProvider<T>(plugins: [NetworkLoggerPlugin(verbose: true)])
+    public lazy var provider: MoyaProvider<T> = MoyaProvider<T>(manager: manager, plugins: [NetworkLoggerPlugin(verbose: true)])
     
     public init() {}
 
