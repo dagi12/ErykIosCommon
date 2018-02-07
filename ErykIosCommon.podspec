@@ -27,4 +27,6 @@ Pod::Spec.new do |s|
   s.dependency 'RxSwift', '~> 4.0.0'
   s.dependency 'SkyFloatingLabelTextField', '~> 3.2.1'
   s.dependency 'Kingfisher', '~> 4.1.0'
+  s.dependency 'Whisper', '~> 6.0.2'
+
 end

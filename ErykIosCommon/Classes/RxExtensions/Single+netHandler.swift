@@ -1,0 +1,22 @@
+//
+//  Single+netHandler.swift
+//  Alamofire
+//
+//  Created by Eryk Mariankowski on 07.02.2018.
+//
+
+import Whisper
+import RxSwift
+
+extension Single where Trait == SingleTrait {
+   
+    public func netHandler(_ nav: UINavigationController) -> Single<Element> {
+        return self.do(onError: { error in
+            let message = Message(title: "no_internet".common, backgroundColor: .red)
+            Whisper.show(whisper: message, to: nav, action: .present)
+        }, onSubscribed: {
+            Whisper.hide(whisperFrom: nav)
+        })
+    }
+    
+}
