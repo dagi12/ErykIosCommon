@@ -11,12 +11,14 @@ import RxSwift
 extension Single where Trait == SingleTrait {
    
     public func netHandler(_ nav: UINavigationController) -> Single<Element> {
-        return self.do(onError: { error in
-            let message = Message(title: "no_internet".common, backgroundColor: .red)
-            Whisper.show(whisper: message, to: nav, action: .present)
-        }, onSubscribed: {
-            Whisper.hide(whisperFrom: nav)
-        })
+        return self
+            .observeOn(MainScheduler.instance)
+            .do(onNext: { _ in
+                Whisper.hide(whisperFrom: nav)
+            }, onError: { error in
+                let message = Message(title: "no_internet".common, backgroundColor: .red)
+                Whisper.show(whisper: message, to: nav, action: .present)
+            })
     }
     
 }
