@@ -13,13 +13,14 @@ Pod::Spec.new do |s|
   s.description      = 'Common resources shared across my projects.'
 
   s.homepage         = 'https://github.com/dagi12/eryk-ios-common'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = 'MIT'
   s.author           = { 'Eryk Mariankowski' => 'dagi12@o2.pl' }
   s.source           = { :git => 'https://github.com/dagi12/eryk-ios-common.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
 
-  s.resource_bundle = { 'ErykIosCommon' => 'ErykIosCommon/Assets/*.ttf' }
+  s.resource_bundle = { 'ErykIosCommon' => 'ErykIosCommon/Assets/*.{lproj,strings,xcassets,ttf}' }
+  s.resources = 'ErykIosCommon/Assets/*.storyboard'
 
   s.source_files = 'ErykIosCommon/Classes/**/*'
   s.dependency 'Alamofire', '~> 4.5.1'
@@ -28,5 +29,9 @@ Pod::Spec.new do |s|
   s.dependency 'SkyFloatingLabelTextField', '~> 3.2.1'
   s.dependency 'Kingfisher', '~> 4.1.0'
   s.dependency 'Whisper', '~> 6.0.2'
+
+  s.dependency 'Swinject', '~> 2.1.1'
+  s.dependency 'SwinjectStoryboard', '~> 1.1.2'
+  s.dependency 'SwinjectAutoregistration', '~> 2.1.1'
 
 end
