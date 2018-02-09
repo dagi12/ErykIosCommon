@@ -17,10 +17,11 @@ Pod::Spec.new do |s|
   s.author           = { 'Eryk Mariankowski' => 'dagi12@o2.pl' }
   s.source           = { :git => 'https://github.com/dagi12/eryk-ios-common.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '9.3'
 
   s.resource_bundle = { 'ErykIosCommon' => 'ErykIosCommon/Assets/*.{xcassets,ttf}' }
-
+  s.resources = [ 'ErykIosCommon/Assets/*.xcassets' ]
+  
   s.source_files = 'ErykIosCommon/Classes/**/*'
   s.dependency 'Alamofire', '~> 4.5.1'
   s.dependency 'Moya/RxSwift', '~> 10.0.0'
