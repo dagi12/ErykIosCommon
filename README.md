@@ -9,9 +9,6 @@
 
 Common stuff shared across iOS projects in Swift.
 
-
-```
-
 ## Author
 
 dagi12@o2.pl

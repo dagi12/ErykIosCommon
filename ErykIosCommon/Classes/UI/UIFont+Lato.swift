@@ -9,6 +9,7 @@ import UIKit
 
 extension UIFont {
 
+    // swiftlint:disable force_try
     public class func loadFont(withName fontName: String) {
         let bundleUrl = Bundle(for: BaseController.self).url(forResource: "ErykIosCommon", withExtension: "bundle")
         let bundle = Bundle(url: bundleUrl!)

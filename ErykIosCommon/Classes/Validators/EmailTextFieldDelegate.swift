@@ -20,7 +20,7 @@ public class EmailTextFieldDelegate: NSObject, UITextFieldDelegate {
     public func verify(_ textField: UITextField) {
         if let text = textField.text {
             if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
-                if text.characters.count < 3 || !text.contains("@") {
+                if text.count < 3 || !text.contains("@") {
                     floatingLabelTextField.errorMessage = "invalid_email".common
                 } else {
                     floatingLabelTextField.errorMessage = ""

@@ -15,12 +15,14 @@ open class BaseStore<T: TargetType> {
         "193.91.26.137": .disableEvaluation
     ]
 
-    public lazy var manager = Manager (
+    private lazy var manager = Manager (
         configuration: URLSessionConfiguration.default,
         serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
     )
 
-    public lazy var provider: MoyaProvider<T> = MoyaProvider<T>(manager: manager, plugins: [NetworkLoggerPlugin(verbose: true)])
+    private lazy var plugins = [NetworkLoggerPlugin(verbose: true)]
+
+    public lazy var provider: MoyaProvider<T> = MoyaProvider<T>(manager: manager, plugins: plugins)
 
     public init() {}
 

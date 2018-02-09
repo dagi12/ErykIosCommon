@@ -10,32 +10,24 @@ import Foundation
 
 public enum DateHelper {
 
-    public static var dayOfMonth: Int {
-        get {
-            return Calendar.current.ordinality(of: .day, in: .month, for: Date())!
-        }
+    public static func dayOfMonth() -> Int {
+        return Calendar.current.ordinality(of: .day, in: .month, for: Date())!
     }
 
-    public static var currentYear: Int {
-        get {
-            return -1
-        }
+    public static func currentYear() -> Int {
+        return -1
     }
 
-    public static var currentMonth: Int {
-        get {
-            let date = Date()
-            let calendar = Calendar.current
-            return calendar.component(.month, from: date)
-        }
+    public static func currentMonth() -> Int {
+        let date = Date()
+        let calendar = Calendar.current
+        return calendar.component(.month, from: date)
     }
 
-    public static var currentDayOfYear: Int {
-        get {
-            let date = Date()
-            let calendar = Calendar.current
-            return calendar.ordinality(of: .day, in: .year, for: date)!
-        }
+    public static func currentDayOfYear() -> Int {
+        let date = Date()
+        let calendar = Calendar.current
+        return calendar.ordinality(of: .day, in: .year, for: date)!
     }
 
 }

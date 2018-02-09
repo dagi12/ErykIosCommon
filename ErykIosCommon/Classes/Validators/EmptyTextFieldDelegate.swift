@@ -25,7 +25,7 @@ public class EmptyTextFieldDelegate: NSObject, UITextFieldDelegate {
 
     public func verify(_ textField: UITextField, _ string: String) {
         if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
-            if string.characters.count == 0 {
+            if string.count == 0 {
                 floatingLabelTextField.errorMessage = msg.common
             } else {
                 floatingLabelTextField.errorMessage = ""

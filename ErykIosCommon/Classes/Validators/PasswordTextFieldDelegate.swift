@@ -21,9 +21,9 @@ public class PasswordTextFieldDelegate: NSObject, UITextFieldDelegate {
     public func verify(_ textField: UITextField) {
         if let text = textField.text {
             if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
-                if text.characters.count == 0 {
+                if text.count == 0 {
                     floatingLabelTextField.errorMessage = "empty_password".common
-                } else if text.characters.count < PasswordTextFieldDelegate.passwordLen {
+                } else if text.count < PasswordTextFieldDelegate.passwordLen {
                     floatingLabelTextField.errorMessage = "short_password".common
                 } else {
                     floatingLabelTextField.errorMessage = ""
