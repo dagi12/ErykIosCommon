@@ -9,19 +9,19 @@
 import Foundation
 
 public enum DateHelper {
-    
+
     public static var dayOfMonth: Int {
         get {
             return Calendar.current.ordinality(of: .day, in: .month, for: Date())!
         }
     }
-    
+
     public static var currentYear: Int {
         get {
             return -1
         }
     }
-    
+
     public static var currentMonth: Int {
         get {
             let date = Date()
@@ -29,7 +29,7 @@ public enum DateHelper {
             return calendar.component(.month, from: date)
         }
     }
-    
+
     public static var currentDayOfYear: Int {
         get {
             let date = Date()

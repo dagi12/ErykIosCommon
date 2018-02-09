@@ -7,9 +7,8 @@
 
 import UIKit
 
-
 extension UIFont {
-    
+
     public class func loadFont(withName fontName: String) {
         let bundleUrl = Bundle(for: BaseController.self).url(forResource: "ErykIosCommon", withExtension: "bundle")
         let bundle = Bundle(url: bundleUrl!)
@@ -20,5 +19,5 @@ extension UIFont {
             CTFontManagerRegisterGraphicsFont(font, nil)
         }
     }
-    
+
 }

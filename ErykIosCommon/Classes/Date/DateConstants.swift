@@ -11,4 +11,3 @@ public enum DateConstants {
     public static let monthLength = 30
     public static let twoWeeksLength = 14
 }
-
