@@ -20,8 +20,11 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.3'
 
   s.resource_bundle = { 'ErykIosCommon' => 'ErykIosCommon/Assets/*.{xcassets,ttf}' }
-  s.resources = [ 'ErykIosCommon/Assets/*.xcassets' ]
-  
+  s.resources = [
+    'ErykIosCommon/Assets/*.{xcassets}',
+    'ErykIosCommon/Assets/**/*.{lproj}'
+  ]
+
   s.source_files = 'ErykIosCommon/Classes/**/*'
   s.dependency 'Alamofire', '~> 4.5.1'
   s.dependency 'Moya/RxSwift', '~> 10.0.0'
