@@ -17,5 +17,9 @@ open class BaseTokenStore<T: TargetType> {
 
     public lazy var provider: MoyaProvider<T> = MoyaProvider<T>(plugins: plugins)
     
+    public init() {
+        
+    }
+    
 }
 
