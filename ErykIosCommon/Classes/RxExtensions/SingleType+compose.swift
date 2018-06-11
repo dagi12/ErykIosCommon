@@ -6,7 +6,6 @@
 //  Copyright © 2017 Eryk Mariankowski. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 
 extension PrimitiveSequence where Trait == SingleTrait {

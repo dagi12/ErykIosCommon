@@ -12,7 +12,8 @@ open class BaseTokenStore<T: TargetType> {
     
     private lazy var plugins: [PluginType] = [
         NetworkLoggerPlugin(verbose: true),
-        AccessTokenPlugin(tokenClosure: BaseUrlStore.sharedInstance.token!)
+        AccessTokenPlugin(tokenClosure: BaseUrlStore.sharedInstance.token!),
+        NetworkErrorsPlugin()
     ]
 
     public lazy var provider: MoyaProvider<T> = MoyaProvider<T>(plugins: plugins)
@@ -20,6 +21,6 @@ open class BaseTokenStore<T: TargetType> {
     public init() {
         
     }
-    
+
 }
 
