@@ -23,8 +23,8 @@
 "empty_password" = "Empty password";
 "short_password" = "Password too short";
 "no_internet" = "No internet connection";
-"ok" = "Ok";
 "date" = "Date";
+"ok" = "Ok";
 "info" = "Info";
 
 "jan" = "Jan";

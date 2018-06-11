@@ -12,7 +12,7 @@ private var commonBundle = Bundle(for: BaseController.self)
 
 public extension String {
 
-    var common: String {
+    public var common: String {
         return NSLocalizedString(self, tableName: "Common", bundle: commonBundle, value: "", comment: "")
     }
 

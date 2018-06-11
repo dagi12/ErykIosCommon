@@ -22,6 +22,8 @@
 "short_password" = "Hasło jest za krótkie";
 "no_internet" = "Brak dostępu do internetu";
 "date" = "Data";
+"ok" = "Ok";
+"info" = "Info";
 
 "jan" = "Sty";
 "feb" = "Lut";
