@@ -1,6 +1,6 @@
 //
 //  UIButton+fade.swift
-//  erent-ceo-ios
+//  softraiostemplate
 //
 //  Created by Eryk Mariankowski on 15.11.2017.
 //  Copyright © 2017 Eryk Mariankowski. All rights reserved.

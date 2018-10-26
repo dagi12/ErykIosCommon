@@ -1,6 +1,6 @@
 //
 //  SingleType+compose.swift
-//  erent-ceo-ios
+//  softraiostemplate
 //
 //  Created by Eryk Mariankowski on 23.10.2017.
 //  Copyright © 2017 Eryk Mariankowski. All rights reserved.

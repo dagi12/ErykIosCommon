@@ -33,7 +33,7 @@ open -a Xcode *.xcworkspace
 ```
 ### Autocorrect
 ```bash
-cd ../erent-ceo-ios && ../Pods/SwiftLint/swiftlint autocorrect
+cd ../softraiostemplate && ../Pods/SwiftLint/swiftlint autocorrect
 ```
 
 ### xCode version
