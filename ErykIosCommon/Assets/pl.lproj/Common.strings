@@ -19,6 +19,7 @@
 "choose_option" = "Wybierz opcję";
 "invalid_email" = "Nieprawidłowy email";
 "empty_password" = "Puste hasło";
+"empty_alias" = "Pusty alias";
 "short_password" = "Hasło jest za krótkie";
 "no_internet" = "Brak dostępu do internetu";
 "date" = "Data";

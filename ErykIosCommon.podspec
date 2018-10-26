@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
   s.dependency 'SkyFloatingLabelTextField', '~> 3.5.1'
   s.dependency 'Kingfisher', '~> 4.8.0'
   s.dependency 'Whisper', '~> 6.0.2'
-  s.dependency 'XCGLogger', '~> 6.0.2'
+  s.dependency 'XCGLogger', '~> 6.0.4'
 
   s.dependency 'Swinject', '~> 2.4.1'
   s.dependency 'SwinjectStoryboard', '~> 2.0.1'

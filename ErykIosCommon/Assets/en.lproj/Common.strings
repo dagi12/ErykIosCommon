@@ -21,6 +21,7 @@
 "choose_option" = "Choose option";
 "invalid_email" = "Invalid email";
 "empty_password" = "Empty password";
+"empty_alias" = "Empty alias";
 "short_password" = "Password too short";
 "no_internet" = "No internet connection";
 "date" = "Date";

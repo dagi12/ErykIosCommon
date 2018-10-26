@@ -35,3 +35,8 @@ open -a Xcode *.xcworkspace
 ```bash
 cd ../erent-ceo-ios && ../Pods/SwiftLint/swiftlint autocorrect
 ```
+
+### xCode version
+```bash
+/usr/bin/xcodebuild -version
+```
