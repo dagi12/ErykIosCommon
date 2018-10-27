@@ -28,7 +28,7 @@ open class BaseController: UIViewController {
             width: ProcessIndicatorCoords.width, height: ProcessIndicatorCoords.height)
         let loadingIndicator = UIActivityIndicatorView(frame: frameRect)
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
         loadingIndicator.startAnimating()
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true)
@@ -50,8 +50,8 @@ open class BaseController: UIViewController {
 
     private func internalShowError(message: String) {
         let alertController = UIAlertController(
-            title: "error".common, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertActionStyle.default, handler: nil))
+            title: "error".common, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
 
@@ -77,8 +77,8 @@ open class BaseController: UIViewController {
 
     private func internalShowInfo(message: String) {
         let alertController = UIAlertController(
-            title: "Info", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertActionStyle.default, handler: nil))
+            title: "Info", message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
 

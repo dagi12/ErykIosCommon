@@ -10,7 +10,7 @@ import XCGLogger
 
 public let log = XCGLogger.default
 
-public typealias LaunchOptionsCallback = ([UIApplicationLaunchOptionsKey: Any]?)
+public typealias LaunchOptionsCallback = ([UIApplication.LaunchOptionsKey: Any]?)
 
 open class ErykAppDelegate: UIResponder, UIApplicationDelegate {
 

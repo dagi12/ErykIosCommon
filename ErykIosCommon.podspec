@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Eryk Mariankowski' => 'dagi12@o2.pl' }
   s.source           = { :git => 'https://github.com/dagi12/eryk-ios-common.git', :tag => s.version.to_s }
 
+  s.swift_version = '4.2'
   s.ios.deployment_target = '10.3'
 
   s.resource_bundle = { 'ErykIosCommon' => 'ErykIosCommon/Assets/*.{xcassets,ttf}' }
@@ -26,18 +27,27 @@ Pod::Spec.new do |s|
   ]
 
   s.source_files = 'ErykIosCommon/Classes/**/*'
-  s.dependency 'Alamofire', '~> 4.7.2'
-  s.dependency 'ObjectMapper', '~> 3.3.0'
-  s.dependency 'Moya-ObjectMapper/RxSwift'
-  s.dependency 'Moya/RxSwift', '~> 10.0.2'
-  s.dependency 'RxSwift', '~> 4.0.0'
-  s.dependency 'SkyFloatingLabelTextField', '~> 3.5.1'
-  s.dependency 'Kingfisher', '~> 4.8.0'
-  s.dependency 'Whisper', '~> 6.0.2'
-  s.dependency 'XCGLogger', '~> 6.0.4'
 
-  s.dependency 'Swinject', '~> 2.4.1'
-  s.dependency 'SwinjectStoryboard', '~> 2.0.1'
-  s.dependency 'SwinjectAutoregistration', '~> 2.1.1'
+  # Swinject
+  s.dependency 'Swinject', '>= 2.5.0'
+  s.dependency 'SwinjectStoryboard', '>= 2.1.0'
+  s.dependency 'SwinjectAutoregistration', '>= 2.5.0'
+
+  # rx
+  s.dependency 'Moya-ObjectMapper/RxSwift'
+  s.dependency 'Moya/RxSwift', '>= 11.0.2'
+  s.dependency 'RxSwift', '>= 4.3.1'
+
+  # networking
+  s.dependency 'Alamofire', '>= 4.7.3'
+  s.dependency 'ObjectMapper', '>= 3.3.0'
+
+  # ui
+  s.dependency 'SkyFloatingLabelTextField', '>= 3.6.0'
+  s.dependency 'Kingfisher', '>= 4.10.0'
+  s.dependency 'Whisper', '>= 6.0.2'
+
+  # util
+  s.dependency 'XCGLogger', '>= 6.1.0'
 
 end

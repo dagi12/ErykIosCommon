@@ -17,7 +17,7 @@ extension UITableViewCell {
             options: nil,
             progressBlock: nil
         ) { (_, _, _, _) -> Void in
-            tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
     }
 
