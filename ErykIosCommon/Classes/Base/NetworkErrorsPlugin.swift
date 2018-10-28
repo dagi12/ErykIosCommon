@@ -12,7 +12,6 @@ struct HttpStatus {
 
 struct NetworkErrorsPlugin: PluginType {
 
-
     public func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
         if case .success(let response) = result {
             if let response = result.value {

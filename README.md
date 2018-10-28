@@ -40,3 +40,13 @@ cd ../softraiostemplate && ../Pods/SwiftLint/swiftlint autocorrect
 ```bash
 /usr/bin/xcodebuild -version
 ```
+
+### Find duplicates
+```bash
+fdupes -r esoftra ErykIosCommon/ErykIosCommon SoftraIosCommon/SoftraIosCommon
+find ErykIosCommon/ErykIosCommon SoftraIosCommon/SoftraIosCommon -type f -exec basename {} \; | sort | uniq -d
+```
+
+## Handful urls
+makeappicon.com/
+objectivec2swift.com/#/converter/code/

@@ -12,7 +12,8 @@ import Alamofire
 open class BaseStore<T: TargetType> {
 
     let serverTrustPolicies: [String: ServerTrustPolicy] = [
-        "193.91.26.137": .disableEvaluation
+        "193.91.26.137": .disableEvaluation,
+        "46.228.93.150": .disableEvaluation
     ]
 
     private lazy var manager = Manager (

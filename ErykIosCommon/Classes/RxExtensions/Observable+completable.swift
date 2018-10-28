@@ -8,7 +8,6 @@
 import Foundation
 import RxSwift
 
-
 public extension ObservableType {
     public func asCompletable() -> Completable {
         return ignoreElements()
