@@ -5,7 +5,6 @@
 //  Created by Eryk Mariankowski on 09.06.2018.
 //
 
-import Foundation
 import Moya
 
 public protocol BaseTargetType: TargetType {

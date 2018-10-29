@@ -12,6 +12,12 @@ dagi12@o2.pl
 
 ErykIosCommon is available under the MIT license. See the LICENSE file for more info.
 
+## Common errors
+- Object not mapped
+    - (required initializer) required public init?(map: Map) {
+    - (optional variable) var data: T?
+    - (generic conforms to mappable) ApiResponse<T: Mappable>
+
 ## Handful scripts
 
 ```bash
