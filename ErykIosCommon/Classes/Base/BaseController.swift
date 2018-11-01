@@ -10,18 +10,14 @@ import UIKit
 
 public let commonBundle = Bundle(for: BaseController.self)
 
+struct ProcessIndicatorCoords {
+    static let xCoord = 10
+    static let yCoord = 5
+    static let width = 50
+    static let height = 50
+}
+
 open class BaseController: UIViewController {
-
-    struct ProcessIndicatorCoords {
-        static let xCoord = 10
-        static let yCoord = 5
-        static let width = 50
-        static let height = 50
-    }
-
-    public func showProcess() {
-        self.showProcess(message: "please_wait".common)
-    }
 
     public func showProcess(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
@@ -34,10 +30,6 @@ open class BaseController: UIViewController {
         loadingIndicator.startAnimating()
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true)
-    }
-
-    public func hideProcess() {
-        dismiss(animated: true)
     }
 
     public func showError(message: String) {

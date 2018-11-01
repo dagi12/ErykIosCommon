@@ -12,7 +12,7 @@ extension UIColor {
         let newBlue = CGFloat(blue) / 255
         self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
     }
-    
+
     public convenience init(fromHexString hexString: String, withAlpha alpha: CGFloat = 1.0) {
         var hexInt: UInt32 = 0
         let scanner: Scanner = Scanner(string: hexString)

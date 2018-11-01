@@ -6,6 +6,7 @@
 //  Copyright © 2017 Eryk Mariankowski. All rights reserved.
 //
 
+import UIKit
 import RxSwift
 
 extension PrimitiveSequence where Trait == SingleTrait {
@@ -16,13 +17,13 @@ extension PrimitiveSequence where Trait == SingleTrait {
             .observeOn(MainScheduler.instance)
     }
 
-    public func process(controller: BaseController) -> Single<Element> {
+    public func process(controller: UIViewController, message: String = "please_wait".common) -> Single<Element> {
         return self
             .observeOn(MainScheduler.instance)
             .do(onSubscribe: {
-                controller.showProcess()
-            }, onSubscribed: {
-                controller.hideProcess()
+                RxHelper.showProcess(controller: controller, message: message)
+            }, onDispose: {
+                controller.dismiss(animated: true)
             })
     }
 

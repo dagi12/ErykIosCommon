@@ -14,18 +14,17 @@ struct DetailViewConstants {
 }
 
 open class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         fatalError("should be implemented")
     }
-    
+
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         fatalError("should be implemented")
     }
-    
-    
+
     public var delegate: DetailViewControllerDelegate!
-    
+
     // MARK: - View Life Cycle
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +34,14 @@ open class DetailViewController: UIViewController, UITableViewDataSource, UITabl
         delegate.tableView.contentInset = UIEdgeInsets(top: delegate.topViewHeightConstraint.constant - 50, left: 0, bottom: 0, right: 0)
         delegate.tableView.scrollIndicatorInsets = delegate.tableView.contentInset
     }
-    
+
     override open func viewWillAppear(_ animated: Bool) {
         if let navigationController = navigationController {
             navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
             navigationController.navigationBar.shadowImage = UIImage()
         }
     }
-    
+
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let navigationController = navigationController {
@@ -50,12 +49,12 @@ open class DetailViewController: UIViewController, UITableViewDataSource, UITabl
             navigationController.navigationBar.shadowImage = nil
         }
     }
-    
+
     // MARK: - Table View
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yOffset = scrollView.contentOffset.y
         if yOffset < -DetailViewConstants.topViewMaxHeight {
@@ -66,13 +65,13 @@ open class DetailViewController: UIViewController, UITableViewDataSource, UITabl
             delegate.topViewHeightConstraint.constant = DetailViewConstants.topViewMinHeight
         }
     }
-    
+
 }
 
 public protocol DetailViewControllerDelegate: class {
-    
+
     // MARK: - IB Outlets
     weak var tableView: UITableView! { get }
     weak var topViewHeightConstraint: NSLayoutConstraint! {get}
-    
+
 }
