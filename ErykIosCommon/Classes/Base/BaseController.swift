@@ -8,6 +8,8 @@
 
 import UIKit
 
+public let commonBundle = Bundle(for: BaseController.self)
+
 open class BaseController: UIViewController {
 
     struct ProcessIndicatorCoords {

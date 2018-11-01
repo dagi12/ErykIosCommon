@@ -8,8 +8,6 @@
 
 import Foundation
 
-private var commonBundle = Bundle(for: BaseController.self)
-
 public extension String {
 
     public var common: String {

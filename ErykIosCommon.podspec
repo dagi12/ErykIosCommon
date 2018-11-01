@@ -23,7 +23,8 @@ Pod::Spec.new do |s|
   s.resource_bundle = { 'ErykIosCommon' => 'ErykIosCommon/Assets/*.{xcassets,ttf}' }
   s.resources = [
     'ErykIosCommon/Assets/*.{xcassets}',
-    'ErykIosCommon/Assets/**/*.{lproj}'
+    'ErykIosCommon/Assets/**/*.{lproj}',
+    # 'ErykIosCommon/Classes/**/*.{xib}',
   ]
 
   s.source_files = 'ErykIosCommon/Classes/**/*'
