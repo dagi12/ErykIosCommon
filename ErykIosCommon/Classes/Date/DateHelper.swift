@@ -6,9 +6,23 @@
 //  Copyright © 2017 Eryk Mariankowski. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
 public enum DateHelper {
+
+    public static let nilDate: Date = Date(timeIntervalSince1970: 1)
+
+    public static let formatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale.current
+        return dateFormatter
+    }()
+
+    public static let parseFormatter = DateFormatter(withFormat: "yyyy-MM-dd'T'HH:mm:ss", locale: "en_US_POSIX")
+
+    public static let dateTransform = DateFormatterTransform(dateFormatter: parseFormatter)
 
     public static func dayOfMonth() -> Int {
         return Calendar.current.ordinality(of: .day, in: .month, for: Date())!
