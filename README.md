@@ -56,3 +56,24 @@ find ErykIosCommon/ErykIosCommon SoftraIosCommon/SoftraIosCommon -type f -exec b
 ## Handful urls
 makeappicon.com/
 objectivec2swift.com/#/converter/code/
+
+## Handful snippets
+#### Generic array static func
+```swift
+public static func getByType<T: Sequence, Element: AnyObject>(from arr: T, withType type: Element.Type) -> Element? where T.Element == Element {
+    for elem in arr {
+        if elem is Element {
+            return elem
+        }
+    }
+    return nil
+}
+```
+#### Generic array extension
+```swift
+extension Sequence {
+    func callAll<T>(t: T) where Element == Listener<T> {
+        self.forEach { $0(t) }
+    }
+}
+```
