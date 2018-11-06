@@ -16,6 +16,7 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
             .observeOn(MainScheduler.instance)
     }
 
+    // use normally
     public func process(controller: UIViewController, message: String = "please_wait".common) -> Completable {
         return self
             .observeOn(MainScheduler.instance)
@@ -24,7 +25,24 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
             }, onDispose: {
                 controller.dismiss(animated: true)
             })
+    }
 
+    // use for completables after which you want to display ui animtation
+    public func activity(controller: UIViewController, message: String = "please_wait".common) -> Completable {
+        return self
+            .observeOn(MainScheduler.instance)
+            .andThen(Completable.create { event in
+                RxHelper.showProcess(controller: controller, message: message) {
+                    event(.completed)
+                }
+                return Disposables.create()
+            })
+            .andThen(Completable.create { event in
+                controller.dismiss(animated: true) {
+                    event(.completed)
+                }
+                return Disposables.create()
+            })
     }
 
 }

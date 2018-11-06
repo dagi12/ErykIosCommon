@@ -9,7 +9,7 @@ import RxSwift
 
  enum RxHelper {
 
-    static func showProcess(controller: UIViewController, message: String) {
+    static func showProcess(controller: UIViewController, message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let frameRect = CGRect(
             x: ProcessIndicatorCoords.xCoord, y: ProcessIndicatorCoords.yCoord,
@@ -19,7 +19,7 @@ import RxSwift
         loadingIndicator.style = UIActivityIndicatorView.Style.gray
         loadingIndicator.startAnimating()
         alert.view.addSubview(loadingIndicator)
-        controller.present(alert, animated: true)
+        controller.present(alert, animated: true, completion: completion)
     }
 
 }
