@@ -13,9 +13,9 @@ public enum NetworkHelper {
         let jpg = image.jpegData(compressionQuality: 0.8)!
         let title = MultipartFormData(provider: .data(title.data(using: .utf8)!), name: "tytul")
         let description = MultipartFormData(provider: .data(description.data(using: .utf8)!), name: "opis")
-        let square = MultipartFormData(provider: .data("logo-square.png".data(using: .utf8)!), name: "file_name")
+        let square = MultipartFormData(provider: .data("logo-square.jpg".data(using: .utf8)!), name: "file_name")
         let grupaForm = MultipartFormData(provider: provider(group), name: "grupa")
-        let jpgData = MultipartFormData(provider: .data(jpg), name: "plik", fileName: "logo-square.png", mimeType: "image/jpg")
+        let jpgData = MultipartFormData(provider: .data(jpg), name: "plik", fileName: "logo-square.jpg", mimeType: "image/jpg")
         return [title, description, square, grupaForm, jpgData]
     }
 
