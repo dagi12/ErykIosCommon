@@ -13,6 +13,7 @@ struct DetailViewConstants {
     static let topViewMaxHeight: CGFloat = 150
 }
 
+// TODO seperate header and table
 open class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,7 +24,7 @@ open class DetailViewController: UIViewController, UITableViewDataSource, UITabl
         fatalError("should be implemented")
     }
 
-    public var delegate: DetailViewControllerDelegate!
+    public weak var delegate: DetailViewControllerDelegate!
 
     // MARK: - View Life Cycle
     override open func viewDidLoad() {
@@ -31,7 +32,8 @@ open class DetailViewController: UIViewController, UITableViewDataSource, UITabl
         delegate.tableView.delegate = self
         delegate.tableView.dataSource = self
         automaticallyAdjustsScrollViewInsets = false
-        delegate.tableView.contentInset = UIEdgeInsets(top: delegate.topViewHeightConstraint.constant - 100, left: 0, bottom: 0, right: 0)
+        let topInset = delegate.topViewHeightConstraint.constant - 100
+        delegate.tableView.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
         delegate.tableView.scrollIndicatorInsets = delegate.tableView.contentInset
     }
 

@@ -17,6 +17,7 @@ struct ProcessIndicatorCoords {
     static let height = 50
 }
 
+// TODO to extension
 open class BaseController: UIViewController {
 
     public func showProcess(message: String) {

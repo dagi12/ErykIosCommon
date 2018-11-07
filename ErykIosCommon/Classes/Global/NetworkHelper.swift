@@ -14,9 +14,13 @@ public enum NetworkHelper {
         let title = MultipartFormData(provider: .data(title.data(using: .utf8)!), name: "tytul")
         let description = MultipartFormData(provider: .data(description.data(using: .utf8)!), name: "opis")
         let square = MultipartFormData(provider: .data("logo-square.png".data(using: .utf8)!), name: "file_name")
-        let grupa = MultipartFormData(provider: .data(group.data(using: .utf8)!), name: "grupa")
+        let grupaForm = MultipartFormData(provider: provider(group), name: "grupa")
         let jpgData = MultipartFormData(provider: .data(jpg), name: "plik", fileName: "logo-square.png", mimeType: "image/jpg")
-        return [title, description, square, grupa, jpgData]
+        return [title, description, square, grupaForm, jpgData]
+    }
+
+    private static func provider(_ string: String) -> MultipartFormData.FormDataProvider {
+        return .data(string.data(using: .utf8)!)
     }
 
 }
