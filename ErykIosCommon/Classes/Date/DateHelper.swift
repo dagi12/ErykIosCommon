@@ -12,6 +12,13 @@ public enum DateHelper {
 
     public static let nilDate: Date = Date(timeIntervalSince1970: 1)
 
+    public static func isNil(_ date: Date?) -> Bool {
+        if let safeDate = date {
+            return safeDate == DateHelper.nilDate
+        }
+        return true
+    }
+
     public static let formatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
