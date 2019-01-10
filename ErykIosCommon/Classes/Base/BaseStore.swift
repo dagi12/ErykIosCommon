@@ -21,7 +21,10 @@ open class BaseStore<T: TargetType> {
         serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
     )
 
-    private lazy var plugins = [NetworkLoggerPlugin(verbose: true)]
+    private lazy var plugins: [PluginType] = [
+        NetworkLoggerPlugin(verbose: true),
+        NetworkErrorsPlugin()
+    ]
 
     public lazy var provider: MoyaProvider<T> = MoyaProvider<T>(manager: manager, plugins: plugins)
 

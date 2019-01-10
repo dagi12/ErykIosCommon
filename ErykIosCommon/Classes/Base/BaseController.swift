@@ -33,23 +33,6 @@ open class BaseController: UIViewController {
         present(alert, animated: true)
     }
 
-    public func showError(message: String) {
-        if  presentedViewController != nil {
-            dismiss(animated: true, completion: {
-                self.internalShowError(message: message)
-            })
-        } else {
-            internalShowError(message: message)
-        }
-    }
-
-    private func internalShowError(message: String) {
-        let alertController = UIAlertController(
-            title: "error".common, message: message, preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
-        present(alertController, animated: true, completion: nil)
-    }
-
     public func showInfo(message: String) {
         if presentedViewController != nil {
             dismiss(animated: true) {
@@ -73,6 +56,27 @@ open class BaseController: UIViewController {
     private func internalShowInfo(message: String) {
         let alertController = UIAlertController(
             title: "Info", message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+
+}
+
+extension UIViewController {
+
+    public func showError(message: String) {
+        if  presentedViewController != nil {
+            dismiss(animated: true, completion: {
+                self.internalShowError(message: message)
+            })
+        } else {
+            internalShowError(message: message)
+        }
+    }
+
+    private func internalShowError(message: String) {
+        let alertController = UIAlertController(
+            title: "error".common, message: message, preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }

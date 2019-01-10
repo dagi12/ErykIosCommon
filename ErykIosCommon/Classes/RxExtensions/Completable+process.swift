@@ -20,7 +20,11 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
     public func process(controller: UIViewController, message: String = "please_wait".common) -> Completable {
         return self
             .observeOn(MainScheduler.instance)
-            .do(onSubscribe: {
+            .do(onError: {
+                controller.showError(message: $0.localizedDescription)
+                log.error($0)
+                return
+            }, onSubscribe: {
                 RxHelper.showProcess(controller: controller, message: message)
             }, onDispose: {
                 controller.dismiss(animated: true)
