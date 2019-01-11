@@ -8,8 +8,6 @@
 
 import UIKit
 
-public let commonBundle = Bundle(for: BaseController.self)
-
 struct ProcessIndicatorCoords {
     static let xCoord = 10
     static let yCoord = 5
@@ -17,8 +15,24 @@ struct ProcessIndicatorCoords {
     static let height = 50
 }
 
-// TODO to extension
-open class BaseController: UIViewController {
+extension UIViewController {
+
+    public func showError(message: String) {
+        if  presentedViewController != nil {
+            dismiss(animated: true, completion: {
+                self.internalShowError(message: message)
+            })
+        } else {
+            internalShowError(message: message)
+        }
+    }
+
+    private func internalShowError(message: String) {
+        let alertController = UIAlertController(
+            title: "error".common, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
 
     public func showProcess(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
@@ -56,27 +70,6 @@ open class BaseController: UIViewController {
     private func internalShowInfo(message: String) {
         let alertController = UIAlertController(
             title: "Info", message: message, preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
-        present(alertController, animated: true, completion: nil)
-    }
-
-}
-
-extension UIViewController {
-
-    public func showError(message: String) {
-        if  presentedViewController != nil {
-            dismiss(animated: true, completion: {
-                self.internalShowError(message: message)
-            })
-        } else {
-            internalShowError(message: message)
-        }
-    }
-
-    private func internalShowError(message: String) {
-        let alertController = UIAlertController(
-            title: "error".common, message: message, preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }

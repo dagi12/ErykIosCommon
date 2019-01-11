@@ -12,13 +12,11 @@ let log = XCGLogger.default
 
 public typealias LaunchOptionsCallback = ([UIApplication.LaunchOptionsKey: Any]?)
 
-// TODO to extension
-open class ErykAppDelegate: UIResponder, UIApplicationDelegate {
+extension UIApplicationDelegate {
 
     public func initialization() {
         log.setup(level: .debug, showThreadName: true, showLevel: true, showFileNames: true,
-                showLineNumbers: true, writeToFile: nil, fileLevel: nil)
-
+                  showLineNumbers: true, writeToFile: nil, fileLevel: nil)
     }
 
 }

@@ -9,6 +9,8 @@ import Foundation
 
 private let instance = BaseUrlStore()
 
+public let commonBundle = Bundle(for: BaseUrlStore.self)
+
 public class BaseUrlStore {
 
     public class var sharedInstance: BaseUrlStore {
