@@ -27,9 +27,9 @@ extension UIViewController {
         }
     }
 
-    private func internalShowError(message: String) {
+    private func internalShowError(message: String, title: String = "error".common) {
         let alertController = UIAlertController(
-            title: "error".common, message: message, preferredStyle: UIAlertController.Style.alert)
+            title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
