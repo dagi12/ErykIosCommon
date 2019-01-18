@@ -17,6 +17,18 @@ struct ProcessIndicatorCoords {
 
 extension UIViewController {
 
+    public func safeDismiss(closure: (() -> Void)? = nil) {
+        if let pvc = presentedViewController {
+            if !pvc.isBeingDismissed {
+                self.dismiss(animated: true) {
+                    closure?()
+                }
+                return
+            }
+            closure?()
+        }
+    }
+
     public func showError(message: String) {
         if  presentedViewController != nil {
             dismiss(animated: true, completion: {
@@ -34,7 +46,7 @@ extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-    public func showProcess(message: String) {
+    public func showProcess(message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let frameRect = CGRect(
             x: ProcessIndicatorCoords.xCoord, y: ProcessIndicatorCoords.yCoord,
@@ -44,7 +56,7 @@ extension UIViewController {
         loadingIndicator.style = UIActivityIndicatorView.Style.gray
         loadingIndicator.startAnimating()
         alert.view.addSubview(loadingIndicator)
-        present(alert, animated: true)
+        present(alert, animated: true, completion: completion)
     }
 
     public func showInfo(message: String) {

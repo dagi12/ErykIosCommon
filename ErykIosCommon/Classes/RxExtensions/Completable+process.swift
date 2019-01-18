@@ -25,9 +25,9 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
                 log.error($0)
                 return
             }, onSubscribe: {
-                RxHelper.showProcess(controller: controller, message: message)
+                controller.showProcess(message: message)
             }, onDispose: {
-                controller.dismiss(animated: true)
+                controller.safeDismiss()
             })
     }
 
@@ -36,7 +36,7 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
         return self
             .observeOn(MainScheduler.instance)
             .andThen(Completable.create { event in
-                RxHelper.showProcess(controller: controller, message: message) {
+                controller.showProcess(message: message) {
                     event(.completed)
                 }
                 return Disposables.create()

@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import ErykIosCommon
 
 extension PrimitiveSequence where Trait == SingleTrait {
 
@@ -25,9 +26,9 @@ extension PrimitiveSequence where Trait == SingleTrait {
                 log.error($0)
                 return
             }, onSubscribe: {
-                RxHelper.showProcess(controller: controller, message: message)
+                controller.showProcess(message: message)
             }, onDispose: {
-                controller.dismiss(animated: true)
+                controller.safeDismiss()
             })
     }
 
