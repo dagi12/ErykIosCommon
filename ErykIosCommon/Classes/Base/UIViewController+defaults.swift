@@ -7,15 +7,26 @@
 //
 
 import UIKit
+import RxSwift
 
 struct ProcessIndicatorCoords {
     static let xCoord = 10
     static let yCoord = 5
-    static let width = 50
+    static let width = 20
     static let height = 50
 }
 
 extension UIViewController {
+
+    public func completable(message: String) -> Completable {
+        return Completable.create { event in
+            if let pvc = self.presentedViewController as? UIAlertController {
+                pvc.message = message
+            }
+            event(.completed)
+            return Disposables.create()
+        }
+    }
 
     public func safeDismiss(closure: (() -> Void)? = nil) {
         if let pvc = presentedViewController {

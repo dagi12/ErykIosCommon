@@ -28,6 +28,7 @@
 "ok" = "Ok";
 "info" = "Info";
 "comments" = "Comments";
+"from" = "from";
 
 "no_data" = "No data";
 "no_data_cars" = "No data found matching the given filter criteria. Change them or ask your Fleet Manager to add a desired car.";

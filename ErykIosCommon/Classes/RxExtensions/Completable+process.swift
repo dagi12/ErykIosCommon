@@ -31,6 +31,12 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
             })
     }
 
+    public func processMessage(_ message: String, on ctrl: UIViewController) -> Completable {
+        return self
+            .observeOn(MainScheduler.instance)
+            .andThen(ctrl.completable(message: message))
+    }
+
     // use for completables after which you want to display ui animtation
     public func activity(controller: UIViewController, message: String = "please_wait".common) -> Completable {
         return self

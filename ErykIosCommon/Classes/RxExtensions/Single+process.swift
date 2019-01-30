@@ -18,6 +18,16 @@ extension PrimitiveSequence where Trait == SingleTrait {
             .observeOn(MainScheduler.instance)
     }
 
+    public func processMessage(_ message: String, on ctrl: UIViewController) -> Single<Element> {
+        return self
+            .map {
+                if let pvc = ctrl.presentedViewController as? UIAlertController {
+                    pvc.message = message
+                }
+                return $0
+        }
+    }
+
     public func process(controller: UIViewController, message: String = "please_wait".common) -> Single<Element> {
         return self
             .observeOn(MainScheduler.instance)
