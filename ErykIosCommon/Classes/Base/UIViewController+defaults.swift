@@ -18,16 +18,6 @@ struct ProcessIndicatorCoords {
 
 extension UIViewController {
 
-    public func completable(message: String) -> Completable {
-        return Completable.create { event in
-            if let pvc = self.presentedViewController as? UIAlertController {
-                pvc.message = message
-            }
-            event(.completed)
-            return Disposables.create()
-        }
-    }
-
     public func safeDismiss(closure: (() -> Void)? = nil) {
         if let pvc = presentedViewController {
             if !pvc.isBeingDismissed {
