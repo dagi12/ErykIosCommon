@@ -17,7 +17,8 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
     }
 
     // use normally
-    public func process(controller: UIViewController, message: String = "please_wait".common) -> Completable {
+    public func process(controller: UIViewController, message: String? = "please_wait".common) -> Completable {
+        let tmpMessage = message ?? "please_wait".common
         return self
             .observeOn(MainScheduler.instance)
             .do(onError: {
@@ -25,7 +26,7 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
                 log.error($0)
                 return
             }, onSubscribe: {
-                controller.showProcess(message: message)
+                controller.showProcess(message: tmpMessage)
             }, onDispose: {
                 controller.safeDismiss()
             })
@@ -33,10 +34,11 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
 
     // use for completables after which you want to display ui animtation
     public func activity(controller: UIViewController, message: String = "please_wait".common) -> Completable {
+        let tmpMessage = message ?? "please_wait".common
         return self
             .observeOn(MainScheduler.instance)
             .andThen(Completable.create { event in
-                controller.showProcess(message: message) {
+                controller.showProcess(message: tmpMessage) {
                     event(.completed)
                 }
                 return Disposables.create()

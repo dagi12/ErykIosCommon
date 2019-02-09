@@ -28,7 +28,8 @@ extension PrimitiveSequence where Trait == SingleTrait {
         }
     }
 
-    public func process(controller: UIViewController, message: String = "please_wait".common) -> Single<Element> {
+    public func process(controller: UIViewController, message: String? = "please_wait".common) -> Single<Element> {
+        let tmpMessage = message ?? "please_wait".common
         return self
             .observeOn(MainScheduler.instance)
             .do(onError: {
@@ -36,7 +37,7 @@ extension PrimitiveSequence where Trait == SingleTrait {
                 log.error($0)
                 return
             }, onSubscribe: {
-                controller.showProcess(message: message)
+                controller.showProcess(message: tmpMessage)
             }, onDispose: {
                 controller.safeDismiss()
             })
