@@ -45,3 +45,7 @@
 
 "actions" = "Akcje";
 "lack" = "Brak";
+
+"choose_image" = "Wybierz źródło zdjęcia";
+"camera" = "Aparat";
+"gallery" = "Galeria";
