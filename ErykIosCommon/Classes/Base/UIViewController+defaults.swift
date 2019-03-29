@@ -82,7 +82,7 @@ extension UIViewController {
 
     private func internalShowInfo(message: String) {
         let alertController = UIAlertController(
-            title: "Info", message: message, preferredStyle: UIAlertController.Style.alert)
+            title: "info".common, message: message, preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }

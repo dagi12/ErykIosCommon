@@ -24,7 +24,7 @@
 "no_internet" = "Brak dostępu do internetu";
 "date" = "Data";
 "ok" = "Ok";
-"info" = "Info";
+"info" = "Informacja"
 "no_data" = "Brak danych";
 "no_data_cars" = "Nie znaleziono wyników spełniających kryteria wyszukiwania. Zmień tekst wyszukiwania lub poproś Fleet Managera o dodanie samochodu.";
 "comments" = "Uwagi";
