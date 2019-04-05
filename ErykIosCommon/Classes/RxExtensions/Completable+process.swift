@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import SkeletonView
 
 extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
 
@@ -29,6 +30,20 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
                 controller.showProcess(message: tmpMessage)
             }, onDispose: {
                 controller.safeDismiss()
+            })
+    }
+
+    public func process(table: UITableView) -> Completable {
+        return self
+            .observeOn(MainScheduler.instance)
+            .do(onError: {
+                log.error($0)
+                table.hideSkeleton()
+                return
+            }, onSubscribe: {
+                table.showAnimatedGradientSkeleton()
+            }, onDispose: {
+                table.hideSkeleton()
             })
     }
 
