@@ -47,6 +47,7 @@ Pod::Spec.new do |s|
   s.dependency 'SkyFloatingLabelTextField', '>= 3.6.0'
   s.dependency 'Kingfisher', '>= 4.10.0'
   s.dependency 'SkeletonView', '>= 1.4.1'
+  s.dependency 'SwiftMessages', '>= 6.0.0'
 
   # util
   s.dependency 'XCGLogger', '>= 6.1.0'

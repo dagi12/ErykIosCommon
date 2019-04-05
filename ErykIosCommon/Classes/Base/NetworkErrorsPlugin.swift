@@ -5,6 +5,7 @@
 import RxSwift
 import Moya
 import Result
+import SwiftMessages
 
 struct HttpStatus {
     static let unauthorized = 401
@@ -17,6 +18,14 @@ struct NetworkErrorsPlugin: PluginType {
             if let response = result.value {
                 if response.statusCode == HttpStatus.unauthorized {
                     Router.sharedInstance.logout()
+                } else {
+                    SwiftMessages.hide()
+                }
+            }
+        } else if case .failure(let err) = result {
+            if let error = result.error as? MoyaError {
+                if case .underlying(_, _) = err {
+                    SwiftMessages.netInfo()
                 }
             }
         }
