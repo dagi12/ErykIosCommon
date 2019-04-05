@@ -5,7 +5,7 @@
   Created by Eryk Mariankowski on 15.11.2017.
   Copyright © 2017 Eryk Mariankowski. All rights reserved.
 */
-"error" = "Błąd";
+"error" = "Uwaga";
 "notification" = "Powiadomienie";
 "enable" = "Włącz";
 "disable" = "Wyłącz";
