@@ -13,7 +13,7 @@ open class Function<T, S> {
 
     }
 
-    open func apply(t: T) -> S? {
+    open func apply(item: T) -> S? {
         fatalError("should be implemented")
         return nil
     }
