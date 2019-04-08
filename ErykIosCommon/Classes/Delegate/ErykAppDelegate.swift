@@ -12,11 +12,16 @@ let log = XCGLogger.default
 
 public typealias LaunchOptionsCallback = ([UIApplication.LaunchOptionsKey: Any]?)
 
+public struct LoggerWrapper {
+    public static let logger = log
+}
+
 extension UIApplicationDelegate {
 
     public func initialization() {
         log.setup(level: .debug, showThreadName: true, showLevel: true, showFileNames: true,
                   showLineNumbers: true, writeToFile: nil, fileLevel: nil)
+
     }
 
 }
