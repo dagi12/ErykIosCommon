@@ -16,7 +16,7 @@ struct ProcessIndicatorCoords {
     static let height = 50
 }
 
-extension UIViewController {
+public extension UIViewController {
 
     public func safeDismiss(closure: (() -> Void)? = nil) {
         if let pvc = presentedViewController {
@@ -31,7 +31,7 @@ extension UIViewController {
     }
 
     public func showError(message: String) {
-        if  presentedViewController != nil {
+        if presentedViewController != nil {
             dismiss(animated: true, completion: {
                 self.internalShowError(message: message)
             })
@@ -85,6 +85,22 @@ extension UIViewController {
             title: "info".common, message: message, preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
         present(alertController, animated: true, completion: nil)
+    }
+
+    public func alertWith(message: String, text: String? = nil, title: String = "info".common) -> Single<String> {
+        return Single<String>.create { single in
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addTextField { (textField) in
+                textField.text = text
+            }
+            alert.addAction(UIAlertAction(title: "ok".common, style: .default, handler: { [weak alert] (_) in
+                let textField = alert?.textFields![0]
+                single(.success(textField!.text!))
+                self.dismiss(animated: true)
+            }))
+            self.present(alert, animated: true, completion: nil)
+            return Disposables.create()
+        }
     }
 
 }
