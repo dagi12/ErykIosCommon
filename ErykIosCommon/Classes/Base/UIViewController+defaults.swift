@@ -103,4 +103,18 @@ public extension UIViewController {
         }
     }
 
+    public func sheet(with actions: [UIAlertAction]) {
+        let alert = UIAlertController(title: "choose_option".common, message: nil, preferredStyle: .actionSheet)
+        for action in actions {
+            alert.addAction(action)
+        }
+        alert.addAction(UIAlertAction(title: "cancel".common, style: .cancel, handler: nil))
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }

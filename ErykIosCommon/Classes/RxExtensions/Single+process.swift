@@ -28,6 +28,20 @@ extension PrimitiveSequence where Trait == SingleTrait {
         }
     }
 
+    public func process(table: UITableView) -> Single<Element> {
+        return self
+            .observeOn(MainScheduler.instance)
+            .do(onError: {
+                log.error($0)
+                table.hideSkeleton()
+                return
+            }, onSubscribe: {
+                table.showAnimatedGradientSkeleton()
+            }, onDispose: {
+                table.hideSkeleton()
+            })
+    }
+
     public func process(controller: UIViewController, message: String? = "please_wait".common) -> Single<Element> {
         let tmpMessage = message ?? "please_wait".common
         return self
