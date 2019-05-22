@@ -31,7 +31,11 @@ public extension UIViewController {
     }
 
     public func showError(message: String) {
-        if presentedViewController != nil {
+        if self.presentedViewController?.isBeingDismissed ?? false {
+            DispatchQueue.main.async {
+                self.internalShowError(message: message)
+            }
+        } else if presentedViewController != nil {
             dismiss(animated: true, completion: {
                 self.internalShowError(message: message)
             })
@@ -61,7 +65,11 @@ public extension UIViewController {
     }
 
     public func showInfo(message: String) {
-        if presentedViewController != nil {
+        if self.presentedViewController?.isBeingDismissed ?? false {
+            DispatchQueue.main.async {
+                self.internalShowInfo(message: message)
+            }
+        } else if presentedViewController != nil {
             dismiss(animated: true) {
                 self.internalShowInfo(message: message)
             }
@@ -80,11 +88,15 @@ public extension UIViewController {
         }
     }
 
-    private func internalShowInfo(message: String) {
+    public func buildInfo(message: String) -> UIAlertController {
         let alertController = UIAlertController(
             title: "info".common, message: message, preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "ok".common, style: UIAlertAction.Style.default, handler: nil))
-        present(alertController, animated: true, completion: nil)
+        return alertController
+    }
+
+    private func internalShowInfo(message: String) {
+        present(buildInfo(message: message), animated: true, completion: nil)
     }
 
     public func alertWith(message: String, text: String? = nil, title: String = "info".common) -> Single<String> {
