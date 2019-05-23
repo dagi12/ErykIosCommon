@@ -11,9 +11,6 @@ public class SwiftMessagesConfig {
 
     public static func setUp() {
         var config = SwiftMessages.defaultConfig
-        config.presentationStyle = .bottom
-        config.presentationContext = .window(windowLevel: .statusBar)
-        config.duration = .forever
         SwiftMessages.defaultConfig = config
     }
 
@@ -22,11 +19,15 @@ public class SwiftMessagesConfig {
 extension SwiftMessages {
 
     static func netInfo() {
+        var config = SwiftMessages.Config()
+        config.presentationStyle = .bottom
+        config.presentationContext = .window(windowLevel: .statusBar)
+        config.duration = .forever
         let view = MessageView.viewFromNib(layout: .statusLine)
         view.configureTheme(.error)
         view.configureDropShadow()
         view.configureContent(title: "", body: "no_internet".common)
-        SwiftMessages.show(view: view)
+        SwiftMessages.show(config: config, view: view)
     }
 
 }

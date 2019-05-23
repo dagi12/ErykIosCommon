@@ -48,7 +48,11 @@ Pod::Spec.new do |s|
   s.dependency 'Kingfisher', '>= 4.10.0'
   s.dependency 'SkeletonView', '>= 1.4.1'
   s.dependency 'SwiftMessages', '>= 6.0.0'
-
+  
+  # progress
+  s.dependency 'PKHUD', '~> 5.0'
+  s.dependency 'TransitionButton', '~> 0.5.2'
+  
   # util
   s.dependency 'XCGLogger', '>= 6.1.0'
 

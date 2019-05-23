@@ -21,9 +21,7 @@ extension PrimitiveSequence where Trait == SingleTrait {
     public func processMessage(_ message: String, on ctrl: UIViewController) -> Single<Element> {
         return self
             .map {
-                if let pvc = ctrl.presentedViewController as? UIAlertController {
-                    pvc.message = message
-                }
+                ctrl.change(message: message)
                 return $0
         }
     }
@@ -42,8 +40,7 @@ extension PrimitiveSequence where Trait == SingleTrait {
             })
     }
 
-    public func process(controller: UIViewController, message: String? = "please_wait".common) -> Single<Element> {
-        let tmpMessage = message ?? "please_wait".common
+    public func process(controller: UIViewController, message: String? = nil) -> Single<Element> {
         return self
             .observeOn(MainScheduler.instance)
             .do(onError: {
@@ -51,7 +48,7 @@ extension PrimitiveSequence where Trait == SingleTrait {
                 log.error($0)
                 return
             }, onSubscribe: {
-                controller.showProcess(message: tmpMessage)
+                controller.showProcess(message: message)
             }, onDispose: {
                 controller.safeDismiss()
             })
