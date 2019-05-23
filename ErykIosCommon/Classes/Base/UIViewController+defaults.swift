@@ -18,6 +18,8 @@ struct ProcessIndicatorCoords {
 
 public extension UIViewController {
 
+    // FIXME merge with showError, showMessage and CustomUrlCompletable,
+    // replace with Toast or onForm messages, replace UIAlertController with NVActivityIndicatorView, Indicator on buttons
     public func safeDismiss(closure: (() -> Void)? = nil) {
         if let pvc = presentedViewController {
             if !pvc.isBeingDismissed {
@@ -30,6 +32,7 @@ public extension UIViewController {
         }
     }
 
+    @available(*, deprecated, message: "Use toast or onForm info")
     public func showError(message: String) {
         if self.presentedViewController?.isBeingDismissed ?? false {
             DispatchQueue.main.async {
@@ -51,6 +54,7 @@ public extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
+    @available(*, deprecated, message: "Use NVActivityIndicatorView or ButtonIndicator")
     public func showProcess(message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let frameRect = CGRect(
@@ -64,6 +68,7 @@ public extension UIViewController {
         present(alert, animated: true, completion: completion)
     }
 
+    @available(*, deprecated, message: "Use toast or onForm info")
     public func showInfo(message: String) {
         if self.presentedViewController?.isBeingDismissed ?? false {
             DispatchQueue.main.async {
@@ -78,6 +83,7 @@ public extension UIViewController {
         }
     }
 
+    @available(*, deprecated, message: "Use toast or onForm info")
     public func present(_ controller: UIViewController) {
         if presentedViewController != nil {
             dismiss(animated: true) {
@@ -88,6 +94,7 @@ public extension UIViewController {
         }
     }
 
+    @available(*, deprecated, message: "Use toast or onForm info")
     public func buildInfo(message: String) -> UIAlertController {
         let alertController = UIAlertController(
             title: "info".common, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -99,6 +106,7 @@ public extension UIViewController {
         present(buildInfo(message: message), animated: true, completion: nil)
     }
 
+    @available(*, deprecated, message: "Use toast or onForm info")
     public func alertWith(message: String, text: String? = nil, title: String = "info".common) -> Single<String> {
         return Single<String>.create { single in
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

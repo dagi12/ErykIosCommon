@@ -11,17 +11,9 @@ import Alamofire
 
 open class BaseStore<T: TargetType> {
 
-    let serverTrustPolicies: [String: ServerTrustPolicy] = [
-        "193.91.26.137": .disableEvaluation,
-        "46.228.93.150": .disableEvaluation,
-        // AUTH API
-        "217.168.139.117": .disableEvaluation,
-        "217.168.139.120": .disableEvaluation
-    ]
-
     private lazy var manager = Manager (
         configuration: URLSessionConfiguration.default,
-        serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+        serverTrustPolicyManager: CustomServerTrustPoliceManager()
     )
 
     #if targetEnvironment(simulator)
