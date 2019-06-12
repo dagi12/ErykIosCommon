@@ -11,7 +11,12 @@ public class Router {
     public weak var logoutDelegate: LogoutDelegate?
 
     public func logout() {
+        UserDefaults.standard.set(false, forKey: ConfigConstants.registeredKey)
         logoutDelegate!.logout()
     }
 
+}
+
+public enum ConfigConstants {
+    public static let registeredKey = "registeredKey"
 }
