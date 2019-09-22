@@ -30,9 +30,9 @@ Pod::Spec.new do |s|
   s.source_files = 'ErykIosCommon/Classes/**/*'
 
   # Swinject
-  s.dependency 'Swinject', '>= 2.5.0'
-  s.dependency 'SwinjectStoryboard', '>= 2.1.0'
-  s.dependency 'SwinjectAutoregistration', '>= 2.5.0'
+  s.dependency 'Swinject', '2.6.1'
+  s.dependency 'SwinjectStoryboard', '>= 2.2.0'
+  s.dependency 'SwinjectAutoregistration', '>= 2.6.1'
 
   # rx
   s.dependency 'Moya-ObjectMapper/RxSwift'
