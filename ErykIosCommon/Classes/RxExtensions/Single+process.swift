@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-import ErykIosCommon
 
 extension PrimitiveSequence where Trait == SingleTrait {
 

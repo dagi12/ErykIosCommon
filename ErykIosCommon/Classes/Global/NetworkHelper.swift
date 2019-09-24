@@ -27,4 +27,10 @@ public enum NetworkHelper {
         return .data(string.data(using: .utf8)!)
     }
 
+    public static func formData(dict: [String: String]) -> Task {
+        return .uploadMultipart(dict.map { (key: String, value: String) in
+            MultipartFormData(provider: provider(value), name: key)
+        })
+    }
+
 }
