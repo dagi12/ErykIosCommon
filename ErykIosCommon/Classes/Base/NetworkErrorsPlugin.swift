@@ -9,6 +9,7 @@ import SwiftMessages
 
 struct HttpStatus {
     static let unauthorized = 401
+    static let forbidden = 403
 }
 
 struct NetworkErrorsPlugin: PluginType {
@@ -16,7 +17,7 @@ struct NetworkErrorsPlugin: PluginType {
     public func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
         if case .success(let response) = result {
             if let response = result.value {
-                if response.statusCode == HttpStatus.unauthorized {
+                if response.statusCode == HttpStatus.unauthorized || response.statusCode == HttpStatus.forbidden {
                     Router.sharedInstance.logout()
                 } else {
                     SwiftMessages.hide()
