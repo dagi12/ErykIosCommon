@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import SwiftMessages
 
 extension PrimitiveSequence where Trait == SingleTrait {
 
@@ -30,6 +31,7 @@ extension PrimitiveSequence where Trait == SingleTrait {
             .observeOn(MainScheduler.instance)
             .do(onError: {
                 log.error($0)
+                SwiftMessages.showError(message: $0.localizedDescription)
                 table.hideSkeleton()
                 return
             }, onSubscribe: {

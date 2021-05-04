@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import SkeletonView
+import SwiftMessages
 
 extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
 
@@ -37,6 +38,7 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
             .observeOn(MainScheduler.instance)
             .do(onError: {
                 log.error($0)
+                SwiftMessages.showError(message: $0.localizedDescription)
                 table.hideSkeleton()
                 return
             }, onSubscribe: {

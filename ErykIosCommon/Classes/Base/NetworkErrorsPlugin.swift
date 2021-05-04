@@ -19,9 +19,11 @@ struct NetworkErrorsPlugin: PluginType {
             if let response = result.value {
                 if response.statusCode == HttpStatus.unauthorized || response.statusCode == HttpStatus.forbidden {
                     Router.sharedInstance.logout()
-                } else {
-                    SwiftMessages.hide()
                 }
+                // todo Chowało mi błędy nie wiem dlaczego
+                //                else {
+                //                    SwiftMessages.hide()
+                //                }
             }
         } else if case .failure(let err) = result {
             if let error = result.error as? MoyaError {

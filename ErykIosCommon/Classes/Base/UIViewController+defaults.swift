@@ -39,16 +39,7 @@ public extension UIViewController {
     }
 
     public func showError(message: String) {
-        var config = SwiftMessages.Config()
-        config.presentationStyle = .top
-        config.duration = .forever
-        let view = MessageView.viewFromNib(layout: .messageView)
-        view.button?.isHidden = true
-        view.configureTheme(.error)
-        view.configureDropShadow()
-        view.tapHandler = { _ in SwiftMessages.hide() }
-        view.configureContent(title: "error".common, body: message)
-        SwiftMessages.show(config: config, view: view)
+        SwiftMessages.showError(message: message)
     }
 
 }
