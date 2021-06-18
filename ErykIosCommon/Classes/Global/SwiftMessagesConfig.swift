@@ -23,7 +23,7 @@ extension SwiftMessages {
         var config = SwiftMessages.Config()
         config.presentationStyle = .bottom
         config.presentationContext = .window(windowLevel: .statusBar)
-        config.duration = .forever
+        config.duration = .seconds(seconds: 60)
         let view = MessageView.viewFromNib(layout: .statusLine)
         view.configureTheme(.error)
         view.configureDropShadow()
