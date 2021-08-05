@@ -10,6 +10,7 @@ import SwiftMessages
 struct HttpStatus {
     static let unauthorized = 401
     static let forbidden = 403
+    static let notFound = 404
 }
 
 struct NetworkErrorsPlugin: PluginType {
