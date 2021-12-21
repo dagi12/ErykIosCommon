@@ -11,11 +11,6 @@ import Alamofire
 
 open class BaseStore<T: TargetType> {
 
-    private lazy var manager = Manager (
-        configuration: URLSessionConfiguration.default,
-        serverTrustPolicyManager: CustomServerTrustPoliceManager()
-    )
-
     #if targetEnvironment(simulator)
     private lazy var plugins: [PluginType] = [
         NetworkLoggerPlugin(verbose: true),
@@ -27,7 +22,7 @@ open class BaseStore<T: TargetType> {
     ]
     #endif
 
-    public lazy var provider: MoyaProvider<T> = MoyaProvider<T>(manager: manager, plugins: plugins)
+    public lazy var provider: MoyaProvider<T> = MoyaProvider<T>(manager: NetworkErrorsPlugin.sharedManager, plugins: plugins)
 
     public init() {}
 
