@@ -19,7 +19,7 @@ public class SwiftMessagesConfig {
 
 extension SwiftMessages {
 
-    public static func netInfo() {
+    public static func netInfo(body: String = "no_internet".common) {
         var config = SwiftMessages.Config()
         config.presentationStyle = .bottom
         config.presentationContext = .window(windowLevel: .statusBar)
@@ -27,7 +27,7 @@ extension SwiftMessages {
         let view = MessageView.viewFromNib(layout: .statusLine)
         view.configureTheme(.error)
         view.configureDropShadow()
-        view.configureContent(title: "", body: "no_internet".common)
+        view.configureContent(title: "", body: body)
         SwiftMessages.show(config: config, view: view)
     }
 

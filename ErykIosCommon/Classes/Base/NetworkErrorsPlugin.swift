@@ -18,8 +18,8 @@ public struct NetworkErrorsPlugin: PluginType {
     public static let sharedManager: Manager = {
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
-        configuration.timeoutIntervalForRequest = 60
-        configuration.timeoutIntervalForResource = 60
+        configuration.timeoutIntervalForRequest = 120
+        configuration.timeoutIntervalForResource = 120
         return Manager (
             configuration: configuration,
             serverTrustPolicyManager: CustomServerTrustPoliceManager()
@@ -31,6 +31,8 @@ public struct NetworkErrorsPlugin: PluginType {
             if let response = result.value {
                 if response.statusCode == HttpStatus.unauthorized || response.statusCode == HttpStatus.forbidden {
                     Router.sharedInstance.logout()
+                } else if  response.statusCode == HttpStatus.notFound {
+                    SwiftMessages.netInfo(body: "Serwer API jest nieaktywny")
                 }
                 // todo Chowało mi błędy nie wiem dlaczego
                 //                else {
@@ -40,9 +42,8 @@ public struct NetworkErrorsPlugin: PluginType {
         } else if case .failure(let err) = result {
             if let error = result.error as? MoyaError {
                 if case .underlying(let err2, let res) = err {
-                    // TODO rozdziel brak połączenia internetowego i 404
                     log.warning(err2.localizedDescription)
-                    SwiftMessages.netInfo()
+                    SwiftMessages.netInfo(body: err2.localizedDescription)
                 }
             }
         }
