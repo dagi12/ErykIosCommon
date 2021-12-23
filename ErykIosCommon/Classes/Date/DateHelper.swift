@@ -57,4 +57,10 @@ public enum DateHelper {
         return localDate
     }
 
+    public static func truncateSeconds(to: Date) -> Date {
+            let calendar = Calendar.current
+            let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: to)
+            return calendar.date(from: dateComponents)!
+        }
+
 }
