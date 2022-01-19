@@ -23,7 +23,7 @@ extension SwiftMessages {
         var config = SwiftMessages.Config()
         config.presentationStyle = .bottom
         config.presentationContext = .window(windowLevel: .statusBar)
-        config.duration = .seconds(seconds: 60)
+        config.duration = .seconds(seconds: 30)
         let view = MessageView.viewFromNib(layout: .statusLine)
         view.configureTheme(.error)
         view.configureDropShadow()
@@ -34,7 +34,7 @@ extension SwiftMessages {
     public static func showError(message: String) {
         var config = SwiftMessages.Config()
         config.presentationStyle = .top
-        config.duration = .seconds(seconds: 30)
+        config.duration = .seconds(seconds: 10)
         let view = MessageView.viewFromNib(layout: .messageView)
         view.button?.isHidden = true
         view.configureTheme(.error)
